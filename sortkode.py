@@ -1,6 +1,6 @@
 import csv
 file = csv.reader(open('tesuas.csv', 'r'))
-rows = ['sales']
+rows = [column for column in file]
 
 
 # Python program for implementation of Bubble Sort
