@@ -2,7 +2,7 @@ import csv
 import os
 from timeit import default_timer as timer
 
-os.chdir(r"C:\Users\User\Documents\python2")
+os.chdir(r"C:\Users\User\Documents\python2")        #direktori file csv
 
 file = csv.reader(open('tesuas.csv', 'r'))
 rows = [row for row in file]
@@ -50,14 +50,19 @@ while True:
     menu = int(input("MENU\n1. Cari nilai tertentu dalam variabel sales\n2. Tulis hasil sort ke file baru\n3.Exit\n"))
     if menu == 1:
         cari = float(input("Nilai berapa yang ingin dicari: "))
+        start = timer()
         hasil = binary_search(sorted_rows, 1, len(sorted_rows)-1, cari)
-
+        end = timer()
+        elapsedtime = end - start
+        lewat = "{:.5f}".format(elapsedtime)
+        
         if hasil != -1:
             clear()	
             print(f"Nilai {cari} ada pada variabel sales pada baris ke-{hasil} atau ke-{hasil+1} jika dengan header\n")
             print(sorted_rows[0])
             print(sorted_rows[hasil])
-            input("\nTekan ENTER untuk melanjutkan...")
+            print(f"\nWaktu sort: {lewat} detik")
+            input("Tekan ENTER untuk melanjutkan...")
             clear()
         else:
             print(f"\nNilai {cari} tidak ditemukan pada variabel sales")
