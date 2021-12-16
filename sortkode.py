@@ -46,7 +46,7 @@ for i in range(5):
 print(f"\nWaktu sort: {lewat} detik")
 
 while True:
-    print("==========================================================================")
+    print("="*35)
     menu = int(input("MENU\n1. Cari nilai tertentu dalam variabel sales\n2. Tulis hasil sort ke file baru\n3.Exit\n"))
     if menu == 1:
         cari = float(input("Nilai berapa yang ingin dicari: "))
