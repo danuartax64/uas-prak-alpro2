@@ -11,16 +11,16 @@ def bubble_sort(arr):
     n = len(arr)
     for i in range(n - 1):
         for j in range(1, n - i - 1):
-            if arr[j][6] > arr[j + 1][6]:
+            if float(arr[j][6]) > float(arr[j + 1][6]):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
 def binary_search(arr, low, high, x):
     if high >= low:
         mid = (high + low) // 2
-        if arr[mid][6] == x:
+        if float(arr[mid][6]) == x:
             return mid
-        elif arr[mid][6] > x:
+        elif float(arr[mid][6]) > x:
             return binary_search(arr, low, mid - 1, x)
         else:
             return binary_search(arr, mid + 1, high, x)
@@ -44,16 +44,17 @@ print("\nSampel data setelah diurutkan: ")
 for i in range(5):
     print(sorted_rows[i])
 print(f"\nWaktu sort: {lewat} detik")
+
 while True:
     print("==========================================================================")
     menu = int(input("MENU\n1. Cari nilai tertentu dalam variabel sales\n2. Tulis hasil sort ke file baru\n3.Exit\n"))
     if menu == 1:
-        cari = input("Nilai berapa yang ingin dicari: ")
+        cari = float(input("Nilai berapa yang ingin dicari: "))
         hasil = binary_search(sorted_rows, 1, len(sorted_rows)-1, cari)
 
         if hasil != -1:
             clear()	
-            print(f"Nilai {cari} ada pada variabel sales pada baris ke-{hasil}\n")
+            print(f"Nilai {cari} ada pada variabel sales pada baris ke-{hasil} atau ke-{hasil+1} jika dengan header\n")
             print(sorted_rows[0])
             print(sorted_rows[hasil])
             input("\nTekan ENTER untuk melanjutkan...")
@@ -79,6 +80,6 @@ while True:
     elif menu == 3:
         print("Keluar...")
         break
-    
+
     else:
-        print("Masukan pilihan dengan benar")
+        print("Masukan pilihan yang sudah diberikan!")
