@@ -79,3 +79,6 @@ while True:
     elif menu == 3:
         print("Keluar...")
         break
+    
+    else:
+        print("Masukan pilihan dengan benar")
