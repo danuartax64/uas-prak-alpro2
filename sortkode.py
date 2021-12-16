@@ -74,7 +74,7 @@ while True:
     elif menu == 2:
         start = timer()
         with open('outputtesuas.csv', 'w+') as f:
-            sorted_rows2 = [', '.join(row)+'\n' for row in bubble_sort(rows)]
+            sorted_rows2 = [', '.join(row)+'\n' for row in sorted_rows]
             f.writelines(sorted_rows2)
             end = timer()
             elapsedtime = end - start
