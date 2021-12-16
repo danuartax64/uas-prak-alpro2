@@ -48,6 +48,7 @@ print(f"\nWaktu sort: {lewat} detik")
 while True:
     print("="*35)
     menu = int(input("MENU\n1. Cari nilai tertentu dalam variabel sales\n2. Tulis hasil sort ke file baru\n3.Exit\n"))
+
     if menu == 1:
         cari = float(input("Nilai berapa yang ingin dicari: "))
         start = timer()
@@ -61,9 +62,10 @@ while True:
             print(f"Nilai {cari} ada pada variabel sales pada baris ke-{hasil} atau ke-{hasil+1} jika dengan header\n")
             print(sorted_rows[0])
             print(sorted_rows[hasil])
-            print(f"\nWaktu sort: {lewat} detik")
+            print(f"\nWaktu search: {lewat} detik")
             input("Tekan ENTER untuk melanjutkan...")
             clear()
+
         else:
             print(f"\nNilai {cari} tidak ditemukan pada variabel sales")
             input("Tekan ENTER untuk melanjutkan...")
